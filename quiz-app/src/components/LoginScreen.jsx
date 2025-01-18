@@ -1,32 +1,29 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const LoginScreen = () => {
-  const [name, setName] = useState('');
-  const navigate = useNavigate();
+const LoginScreen = ({ onLogin }) => {
+  const [username, setUsername] = useState('');
 
-  const handleStart = () => {
-    if (name.trim()) {
-      navigate('/quiz', { state: { name } });
+  const handleLogin = () => {
+    if (username.trim()) {
+      onLogin(username);
     }
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-teal-100">
-      <h1 className="text-4xl font-bold mb-8">Quiz Khelo</h1>
-      <input
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="p-2 border rounded w-80 text-center"
-      />
-      <button
-        onClick={handleStart}
-        className="mt-4 bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600"
-      >
-        Start
-      </button>
+    <div className="h-screen flex flex-col justify-center items-center bg-teal-200">
+      <div className="text-4xl font-bold mb-8">Quiz Party</div>
+      <div className="flex flex-col items-center">
+        <input
+          type="text"
+          placeholder="Enter your username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="mb-4 p-2 border border-gray-300 rounded"
+        />
+        <button onClick={handleLogin} className="p-2 bg-orange-400 text-white rounded">
+          Login
+        </button>
+      </div>
     </div>
   );
 };
