@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div>
       {view === 'login' && <LoginScreen onLogin={handleLogin} />}
-      {view === 'quiz' && <QuizScreen onQuizFinish={handleQuizFinish} />}
+      {view === 'quiz' && <QuizScreen username={username} onQuizFinish={handleQuizFinish} />}
       {view === 'results' && (
         <QuizResultsScreen score={score} totalQuestions={totalQuestions} onTryAgain={handleRestart} onGoHome={handleGoHome} />
       )}

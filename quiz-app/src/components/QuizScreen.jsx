@@ -4,7 +4,7 @@ import Feedback from './Feedback';
 import QuestionCard from './QuestionCard';
 import FilterDropdown from './FilterDropdown';
 
-const QuizScreen = ({ onQuizFinish }) => {
+const QuizScreen = ({ username, onQuizFinish }) => {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -15,8 +15,6 @@ const QuizScreen = ({ onQuizFinish }) => {
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
-
-  const name = 'User'; // Replace with actual user name if available
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -95,10 +93,9 @@ const QuizScreen = ({ onQuizFinish }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="h-screen flex flex-col bg-teal-200">
-      <header className="p-4 text-lg font-semibold">Welcome, {name}</header>
-      <div className="flex-1 flex flex-col justify-center items-center">
-        <FilterDropdown filter={filter} setFilter={setFilter} />
+    <div className="h-screen flex flex-col bg-gradient-to-r from-teal-200 to-teal-500 ">
+      <header className="p-6 text-4xl font-bold mb-8 ">Welcome, {username}</header>
+      <div className="flex-1 flex flex-col justify-center items-center ">
         {currentQuestionIndex < filteredQuestions.length ? (
           <QuestionCard
             question={filteredQuestions[currentQuestionIndex]}

@@ -10,8 +10,9 @@ const LoginScreen = ({ onLogin }) => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-teal-200">
-      <div className="text-4xl font-bold mb-8">Quiz Party</div>
+    <div className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-teal-200 to-blue-500 overflow-hidden ">
+      <div className="text-6xl font-bold mb-8">Quiz Party</div>
+      <div className="text-2xl font-semibold mb-8">Let's have fun</div>
       <div className="flex flex-col items-center">
         <input
           type="text"

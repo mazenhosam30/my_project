@@ -9,7 +9,7 @@ const QuestionCard = ({
   feedbackMessage,
   handleSubmit,
 }) => (
-  <div className="bg-white shadow rounded-lg p-6 max-w-lg w-full">
+  <div className=" bg-gray-100 shadow rounded-lg p-6 max-w-lg w-full">
     <h2 className="text-lg font-bold mb-4">{question.question.replace(/&quot;/g, '"')}</h2>
     {[...question.incorrect_answers, question.correct_answer]
       .sort()

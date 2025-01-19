@@ -2,7 +2,7 @@ import React from 'react';
 
 const QuizResultsScreen = ({ score, totalQuestions, onTryAgain, onGoHome }) => {
   return (
-    <div className="quiz-results flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-blue-500 text-white">
+    <div className="quiz-results flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-teal-200 to-teal-600 text-white">
       <h1 className="text-4xl font-bold mb-4">Quiz Results</h1>
       <p className="text-2xl mb-6">
         Your Score: <span className="font-extrabold">{score}/{totalQuestions}</span>
